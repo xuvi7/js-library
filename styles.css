@@ -1,10 +1,14 @@
 @import 'node_modules/modern-normalize/modern-normalize.css';
 
+* {
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 :root {
-    --clr-primary: rgb(197, 255, 202);
-    --clr-neutral: white;
-    --clr-accent: rgb(233, 160, 50);
+    --clr-primary: #BCEBCB;
+    --clr-neutral: #F7FFF6;
+    --padding: 36px;
 
     height: 100%;
 }
@@ -17,6 +21,18 @@ body {
 header {
     background-color: var(--clr-neutral);
     height: min(120px, 30%);
+    width: 100%;
     display: flex;
     align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+    box-shadow: 0px 5px 3px 1px rgba(0,0,0,0.20);
+    gap: 24px;
+    padding-left: var(--padding);
+    button {
+        background-color: var(--clr-neutral);
+        border-radius: 5px;
+        height: 35%;
+        aspect-ratio: 3 / 2;
+    }
 }
