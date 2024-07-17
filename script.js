@@ -34,7 +34,7 @@ function createBook(book) {
     const removeButton = document.createElement("button");
 
     bookElement.id = books.length;
-    bookElement.classList.add("entry");
+    bookElement.classList.add("card");
     title.classList.add("title");
     author.classList.add("author");
     pages.classList.add("pages");

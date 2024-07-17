@@ -6,8 +6,8 @@
 }
 
 :root {
-    --clr-primary: #BCEBCB;
-    --clr-neutral: #F7FFF6;
+    --clr-primary: #fabfa1;
+    --clr-neutral: #fffdf6;
     --padding: 36px;
 
     height: 100%;
@@ -29,10 +29,57 @@ header {
     box-shadow: 0px 5px 3px 1px rgba(0,0,0,0.20);
     gap: 24px;
     padding-left: var(--padding);
-    button {
-        background-color: var(--clr-neutral);
-        border-radius: 5px;
-        height: 35%;
-        aspect-ratio: 3 / 2;
+}
+
+.shelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    grid-auto-rows: 300px;
+    gap: var(--padding);
+    padding: var(--padding);
+    & > button {
+        background-color: var(--clr-primary);
+        &:hover {
+            background-color: hsl(from var(--clr-primary) h s calc(l - 10));
+        }
+        &:active {
+            background-color: hsl(from var(--clr-primary) h s calc(l + 5));
+        }
+    }
+
+    & > * {
+        border-color: black;
+        border-style: solid;
+    }
+
+    .card {
+        padding: var(--padding);
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+        .title {
+            font-weight: bold;
+            overflow: hidden;
+            max-height: 110px;
+        }
+        .pages {
+            margin-top: auto;
+            &::after {
+                content: " pages";
+            }
+        }
+        .read {
+            background-color: var(--clr-primary);
+        }
+        .unread {
+            background-color: var(--clr-neutral);
+        }
+        .remove {
+            background-color: var(--clr-neutral);
+            &:hover {
+                background-color: rgb(255, 112, 112);
+            }
+        }
     }
 }
