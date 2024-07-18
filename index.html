@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <div>My Shelf</div>
     </header>
     <div class="shelf">
+        <button class="button-effects" id="newCard"><img src="icons/plus.svg" alt="+"></button>
         <div class="card">
             <div class="title">A Normal Title</div>
             <div class="author">author</div>
@@ -26,27 +27,26 @@
             <button class="unread">Read</button>
             <button class="remove">Remove</button>
         </div>
-        <button><img src="icons/plus.svg" alt="+"></button>
     </div>
     <dialog>
         <form action="">
             <div>
-                <label for="">Title</label>
-                <input type="text">
+                <label for="title">Title</label>
+                <input type="text" id="title" required>
             </div>
             <div>
-                <label for="">Author</label>
-                <input type="text">
+                <label for="author">Author</label>
+                <input type="text" id="author" required>
             </div>
             <div>
-                <label for="">Pages</label>
-                <input type="text">
+                <label for="pages">Pages</label>
+                <input type="number" id="pages" required>
             </div>
             <div>
-                <label for="">Have you read it?</label>
-                <input type="checkbox" name="" id="">
+                <label for="read">Have you read it?</label>
+                <input type="checkbox" id="read">
             </div>
-            <button formmethod="dialog">Submit</button>
+            <button class="button-effects" formmethod="dialog">Submit</button>
         </form>
     </dialog>
 </body>

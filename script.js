@@ -2,6 +2,12 @@ const shelf = document.querySelector(".shelf");
 const books = [];
 const bookCache = [];
 
+const newCardButton = document.querySelector("#newCard");
+const dialog = document.querySelector("dialog");
+newCardButton.addEventListener("click", () => {
+    dialog.showModal();
+});
+
 function Book(author, title, pages, isRead) {
     this.author = author;
     this.title = title;

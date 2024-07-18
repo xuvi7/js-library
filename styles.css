@@ -6,11 +6,26 @@
 }
 
 :root {
-    --clr-primary: #fabfa1;
-    --clr-neutral: #fffdf6;
+    --clr-primary: hsl(20, 90%, 81%);
+    --clr-neutral: hsl(47, 100%, 98%);
     --padding: 36px;
 
     height: 100%;
+}
+
+button {
+    border-style: solid;
+    border-color: rgb(61, 61, 61);
+}
+
+.button-effects {
+    background-color: var(--clr-primary);
+    &:hover {
+        background-color: hsl(from var(--clr-primary) h s calc(l - 10));
+    }
+    &:active {
+        background-color: hsl(from var(--clr-primary) h s calc(l + 5));
+    }
 }
 
 body {
@@ -37,15 +52,6 @@ header {
     grid-auto-rows: 300px;
     gap: var(--padding);
     padding: var(--padding);
-    & > button {
-        background-color: var(--clr-primary);
-        &:hover {
-            background-color: hsl(from var(--clr-primary) h s calc(l - 10));
-        }
-        &:active {
-            background-color: hsl(from var(--clr-primary) h s calc(l + 5));
-        }
-    }
 
     & > * {
         border-color: black;
@@ -82,4 +88,61 @@ header {
             }
         }
     }
+}
+
+dialog {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    height: max(180px, 30%);
+    width: max(300px, 20%);
+
+    background-color: var(--clr-neutral);
+    form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+        input {
+            border: 0.15em solid black;
+        }
+        input[type="checkbox"] {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: black;
+            width: 1em;
+            height: 1em;
+            display: grid;
+            place-content: center;
+        }
+        input[type="checkbox"]::before {
+            content: "";
+            width: 0.75em;
+            height: 0.75em;
+            transform: scale(0);
+            background-color: var(--clr-primary);
+        }
+        input[type="checkbox"]:checked::before {
+            transform: scale(1);
+        }
+        button {
+            background-color: var(--clr-primary);
+            margin-top: auto;
+        }
+    }
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(3px);
 }
