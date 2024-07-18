@@ -16,6 +16,7 @@
 button {
     border-style: solid;
     border-color: rgb(61, 61, 61);
+    background-color: var(--clr-neutral);
 }
 
 .button-effects {
@@ -77,16 +78,19 @@ header {
                 content: " pages";
             }
         }
+        .read-button:before {
+            content: "Read";
+        }
         .read {
             background-color: var(--clr-primary);
-        }
-        .unread {
-            background-color: var(--clr-neutral);
         }
         .remove {
             background-color: var(--clr-neutral);
             &:hover {
                 background-color: rgb(255, 112, 112);
+            }
+            &:before {
+                content: "Remove";
             }
         }
     }
